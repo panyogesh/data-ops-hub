@@ -1,0 +1,7 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "package2",
+    visibility = ["//visibility:public"],
+    deps = ["//package2/lib"],
+)

@@ -1,0 +1,10 @@
+load("@rules_go//go:def.bzl", "go_binary")
+
+go_binary(
+    name = "package1",
+    srcs = ["main.go"],
+    importpath = "github.com/package1",
+    deps = [
+        "//package1/app",
+    ],
+)

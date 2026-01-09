@@ -1,0 +1,7 @@
+# gazelle:prefix github.com/package2
+
+load("@gazelle//:def.bzl", "gazelle")
+
+gazelle(
+    name = "gazelle",
+)

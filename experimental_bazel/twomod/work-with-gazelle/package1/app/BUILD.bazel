@@ -1,0 +1,11 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "app",
+    srcs = ["somefunctionality.go"],
+    importpath = "github.com/package1/app",
+    deps = [
+        "//package2/lib",
+    ],
+    visibility = ["//visibility:public"],
+)

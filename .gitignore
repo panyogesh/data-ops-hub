@@ -2,3 +2,4 @@
 **/bazel-out
 **/bazel-testlogs
 **/bazel-*
+authentication/auth0-restapi-samples/.env

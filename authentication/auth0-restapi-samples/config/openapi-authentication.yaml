@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: MyAuthentication API
+  version: "1.0.0"
+servers:
+  - url: http://172.16.9.5:8000
+
+paths:
+  /login:
+    get:
+      summary: Login
+      operationId: login
+      description: Redirects user to Auth0 /authorize.
+      responses:
+        "302":
+          description: Redirect to Auth0 authorize URL
+          headers:
+            Location:
+              description: Auth0 authorize URL
+              schema:
+                type: string
+                format: uri
+  /token:
+    get:
+      summary: Token
+      operationId: token
+      description: Exchanges authorization code for access token.
+      parameters:
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Token response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                      token_type:
+                        type: string
+                      expires_in:
+                        type: integer
+        "400":
+          description: Bad request - missing code parameter
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

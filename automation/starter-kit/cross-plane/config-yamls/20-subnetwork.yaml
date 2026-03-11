@@ -1,0 +1,14 @@
+apiVersion: compute.gcp.upbound.io/v1beta1
+kind: Subnetwork
+metadata:
+  name: demo-subnet
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    project: round-vent-480303-q3
+    region: us-central1
+    ipCidrRange: 10.10.0.0/24
+    privateIpGoogleAccess: true
+    networkRef:
+      name: demo-vpc

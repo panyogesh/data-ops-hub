@@ -1,0 +1,13 @@
+apiVersion: compute.gcp.upbound.io/v1beta1
+kind: Network
+metadata:
+  name: demo-vpc
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    project: round-vent-480303-q3 
+    description: "Crossplane-managed VPC"
+    autoCreateSubnetworks: false
+    routingMode: REGIONAL
+    mtu: 1460

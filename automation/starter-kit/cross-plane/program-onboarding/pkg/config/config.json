@@ -1,0 +1,22 @@
+{
+  "helm": {
+    "cross_plane": {
+      "chart": "crossplane",
+      "reponame": "crossplane-stable",
+      "repourl": "https://charts.crossplane.io/stable",
+      "version": "1.11.0",
+      "namespace": "crossplane-system",
+      "context": "kind-crossplane-dev"
+    }
+  },
+  "kubeconfig": {
+    "context": "kind-crossplane-dev",
+    "namespace": "crossplane-system"
+  },
+  "gcp": {
+    "project_id": "crossplane-dev",
+    "region": "us-central1",
+    "zone": "us-central1-a",
+    "secret_name": "crossplane-dev-secret"
+  }
+}

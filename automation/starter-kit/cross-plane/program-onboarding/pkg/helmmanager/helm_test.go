@@ -1,4 +1,4 @@
-package helmops
+package helmmanager
 
 import (
 	"context"

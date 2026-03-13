@@ -13,12 +13,13 @@
     "context": "kind-crossplane-dev",
     "namespace": "crossplane-system"
   },
-  "provider": {
+  "providers": [
+    {
       "name": "provider-gcp",
-      "compute": "provider-gcp-compute",
       "package": "xpkg.upbound.io/upbound/provider-gcp-compute:v1.8.1",
-      "source": "crossplane/provider-gcp:v0.25.0" 
-  },
+      "source": "crossplane/provider-gcp:v0.25.0"
+    }
+  ],
   "yamlPaths": {
     "provider": "pkg/crossplane/config-yamls/gcp/00-provider.yaml",
     "secret": "pkg/crossplane/config-yamls/gcp/01-gcp-secret.yaml",
